@@ -1,5 +1,6 @@
 ﻿using AlgoAndDatastructure.Arrays;
 using AlgoAndDatastructure.BinaryTrees;
+using AlgoAndDatastructure.GrokkingAlgorithmByA;
 using AlgoAndDatastructure.LinkedLists;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,30 @@ namespace AlgoAndDatastructure
     {
         static void Main(string[] args)
         {
+            //    List<object> test = new List<object>(){
+            //    5,
+            //    2,
+            //    new List<object>(){
+            //        7, -1
+            //    },
+            //    3,
+            //    new List<object>(){
+            //        6,
+            //        new List<object>(){
+            //            -13, 8
+            //        },
+            //        4,
+            //    },
+            //};
             //Console.WriteLine("Hello World!");
-            Console.WriteLine(JsonSerializer.Serialize(ArrAlgoExpertEasy.TwoNumberSum2(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 17)));
+            //Console.WriteLine(JsonSerializer.Serialize(ArrAlgoExpertEasy.Quicksort(new int[] { 11, 21, 342, 4, 5, 6, 7, 8, 9 })));
             // LinkedListAlgo.PrintLinkedListValues(SetUpLinkedList());
             //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.InsertNodeAtBeginning(SetUpLinkedList()));
             //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.DeleteNodeAtAGivenposition(SetUpLinkedList(), 3));
-           // Console.WriteLine(LinkedListAlgo.FindTheMiddleOfLinkedList(SetUpLinkedList()));
+            //Console.WriteLine(ArrAlgoExpertEasy.ProductSum(test));
+            //Console.WriteLine(ArrAlgoExpertEasy.GetFibNumber2(6));
+           
+            Console.WriteLine(CodePractice.BinarySearch(new int[] { 4, 5, 6, 7, 8, 9, 11, 21, 342}, 342));
             Console.ReadLine();
         }
 

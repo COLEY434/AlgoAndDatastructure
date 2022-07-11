@@ -28,14 +28,15 @@ namespace AlgoAndDatastructure
             //    },
             //};
             //Console.WriteLine("Hello World!");
-            //Console.WriteLine(JsonSerializer.Serialize(ArrAlgoExpertEasy.Quicksort(new int[] { 11, 21, 342, 4, 5, 6, 7, 8, 9 })));
             // LinkedListAlgo.PrintLinkedListValues(SetUpLinkedList());
             //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.InsertNodeAtBeginning(SetUpLinkedList()));
             //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.DeleteNodeAtAGivenposition(SetUpLinkedList(), 3));
             //Console.WriteLine(ArrAlgoExpertEasy.ProductSum(test));
             //Console.WriteLine(ArrAlgoExpertEasy.GetFibNumber2(6));
+
+            Console.WriteLine(JsonSerializer.Serialize(CodePractice.QuickSort(new int[] { 11, 21, 342, 4, 5, 6, 7, 8, 9 })));
+
            
-            Console.WriteLine(CodePractice.BinarySearch(new int[] { 4, 5, 6, 7, 8, 9, 11, 21, 342}, 342));
             Console.ReadLine();
         }
 

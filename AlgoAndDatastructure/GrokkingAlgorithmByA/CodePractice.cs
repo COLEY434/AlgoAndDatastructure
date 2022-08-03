@@ -11,7 +11,7 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
 
         public static int? BinarySearch(int[] list, int item)
         {
-            if(list == null || list.Length == 0)
+            if (list == null || list.Length == 0)
                 return null;
 
             int low = 0;
@@ -22,17 +22,17 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
                 int mid = (low + high) / 2;
                 int guess = list[mid];
 
-                if(guess == item)
+                if (guess == item)
                 {
                     return mid;
                 }
 
-                if(guess < item)
+                if (guess < item)
                 {
                     low = mid + 1;
                 }
 
-                if(guess > item)
+                if (guess > item)
                 {
                     high = mid - 1;
                 }
@@ -44,7 +44,7 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
         {
             List<int> rtnList = new List<int>();
 
-            if(list == null || list.Count == 0)
+            if (list == null || list.Count == 0)
             {
                 return rtnList;
             }
@@ -66,9 +66,9 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
             int smallest = list[0];
             int smallestIndex = 0;
 
-            for(int j = 1; j < list.Count; j++)
+            for (int j = 1; j < list.Count; j++)
             {
-                if(list[j] < smallest)
+                if (list[j] < smallest)
                 {
                     smallestIndex = j;
                     smallest = list[j];
@@ -77,7 +77,7 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
 
             return smallestIndex;
         }
-    
+
         public static int[] QuickSort(int[] nums)
         {
             QuickSortHelper(nums, 0, nums.Length - 1);
@@ -85,7 +85,7 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
         }
         private static void QuickSortHelper(int[] nums, int startIdx, int endIdx)
         {
-            if(startIdx >= endIdx)
+            if (startIdx >= endIdx)
             {
                 return;
             }
@@ -93,8 +93,8 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
             int pivot = startIdx;
             int left = startIdx + 1;
             int right = endIdx;
-            
-            while(left <= right)
+
+            while (left <= right)
             {
                 if (nums[left] > nums[pivot] && nums[right] < nums[pivot])
                 {
@@ -106,10 +106,10 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
                     left++;
                 }
 
-                if(nums[right] > nums[pivot])
+                if (nums[right] > nums[pivot])
                 {
                     right--;
-                }         
+                }
             }
 
             Swap(pivot, right, nums);
@@ -135,5 +135,29 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
             nums[i] = nums[j];
             nums[j] = temp;
         }
+
+        public static int[] InsertElementAtSpecificPosition(int[] nums, int position, int digit)
+        {
+            if (position < 0 || position > nums.Length + 1)
+            {
+                throw new ArgumentOutOfRangeException("position");
+            }
+            
+            for(int i = 0; i < 8; i++)
+            {
+                nums[i] = i;
+            }
+            
+            for(int k = nums.Length - 1; k > position - 1; k--)
+            {
+                nums[k] = nums[k - 1];
+            }
+
+            nums[position - 1] = digit;
+
+            return nums;
+        }
+
+        
     }
 }

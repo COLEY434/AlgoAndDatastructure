@@ -2,6 +2,7 @@
 using AlgoAndDatastructure.BinaryTrees;
 using AlgoAndDatastructure.GrokkingAlgorithmByA;
 using AlgoAndDatastructure.LinkedLists;
+using AlgoAndDatastructure.Neetcode;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -34,9 +35,18 @@ namespace AlgoAndDatastructure
             //Console.WriteLine(ArrAlgoExpertEasy.ProductSum(test));
             //Console.WriteLine(ArrAlgoExpertEasy.GetFibNumber2(6));
 
-            Console.WriteLine(JsonSerializer.Serialize(CodePractice.QuickSort(new int[] { 11, 21, 342, 4, 5, 6, 7, 8, 9 })));
+            //int[,,] array3Da = new int[2, 2, 3] { { { 1, 2, 3 }, { 4, 5, 6 } },
+            //                          { { 7, 8, 9 }, { 10, 11, 12 } } };
 
-           
+            //int[,] array2Da = new int[4, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+            ////Console.WriteLine(JsonSerializer.Serialize(CodePractice.InsertElementAtSpecificPosition(new int[9], 4, 9)));
+
+            //Console.WriteLine(array2Da.GetLength());
+            // Console.WriteLine(array3Da.Rank);
+
+            Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.TopKFrequent(new int[] { 1 }, 1)));
+
+
             Console.ReadLine();
         }
 

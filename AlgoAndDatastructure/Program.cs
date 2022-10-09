@@ -13,39 +13,8 @@ namespace AlgoAndDatastructure
     {
         static void Main(string[] args)
         {
-            //    List<object> test = new List<object>(){
-            //    5,
-            //    2,
-            //    new List<object>(){
-            //        7, -1
-            //    },
-            //    3,
-            //    new List<object>(){
-            //        6,
-            //        new List<object>(){
-            //            -13, 8
-            //        },
-            //        4,
-            //    },
-            //};
-            //Console.WriteLine("Hello World!");
-            // LinkedListAlgo.PrintLinkedListValues(SetUpLinkedList());
-            //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.InsertNodeAtBeginning(SetUpLinkedList()));
-            //LinkedListAlgo.PrintLinkedListValues(LinkedListAlgo.DeleteNodeAtAGivenposition(SetUpLinkedList(), 3));
-            //Console.WriteLine(ArrAlgoExpertEasy.ProductSum(test));
-            //Console.WriteLine(ArrAlgoExpertEasy.GetFibNumber2(6));
-
-            //int[,,] array3Da = new int[2, 2, 3] { { { 1, 2, 3 }, { 4, 5, 6 } },
-            //                          { { 7, 8, 9 }, { 10, 11, 12 } } };
-
-            //int[,] array2Da = new int[4, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
-            ////Console.WriteLine(JsonSerializer.Serialize(CodePractice.InsertElementAtSpecificPosition(new int[9], 4, 9)));
-
-            //Console.WriteLine(array2Da.GetLength());
-            // Console.WriteLine(array3Da.Rank);
-
-            Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.TopKFrequent(new int[] { 1 }, 1)));
-
+            //Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.TopKFrequent(new int[] { 1 }, 1)));
+            Console.WriteLine(SlidingWindow.MaximumSubArrayOfSizeKSlidingWindow(new int[]{ 2, 1, 5, 1, 3, 2 }, 3));
 
             Console.ReadLine();
         }

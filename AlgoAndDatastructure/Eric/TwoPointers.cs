@@ -8,34 +8,58 @@ namespace AlgoAndDatastructure.Eric
 {
     internal class TwoPointers
     {
-        //https://leetcode.com/problems/move-zeroes/
-        public static void MoveZeroes(int[] nums)
-        {
-            int length = nums.Length;
+             
+        //public static int RemoveDuplicates(int[] nums)
+        //{
+        //    int len = nums.Length;
 
-            if(length < 2)
+        //    if(len < 2)
+        //    {
+        //        return len;
+        //    }
+
+        //    int leftPointer = 0;
+        //    int rightPointer = 1;
+
+        //    while(rightPointer < len)
+        //    {
+        //        if(nums[leftPointer] == nums[rightPointer])
+        //        {
+
+        //        }
+        //    }
+        //}
+
+        //https://leetcode.com/problems/move-zeroes/
+        public static void MoveZeros(int[] nums)
+        {
+            int len = nums.Length;
+
+            if (len < 2)
             {
                 return;
             }
-            int left = 0;
-            int right = 1;
 
-            while(right < length)
+            int leftPointer = 0;
+            int rightPointer = 1;
+
+
+            while (rightPointer < len)
             {
-                if(nums[left] != 0)
+                if(nums[leftPointer] != 0)
                 {
-                    left++;
-                    right++;
+                    leftPointer++;
+                    rightPointer++;
                 }
-                else if(nums[right] == 0)
+                else if(nums[rightPointer] == 0)
                 {
-                    right++;
+                    rightPointer++;
                 }
                 else
                 {
-                    int temp = nums[right];
-                    nums[right] = nums[left];
-                    nums[left] = temp;
+                    int temp = nums[rightPointer];
+                    nums[rightPointer] = nums[leftPointer];
+                    nums[(leftPointer++)] = temp;
                 }
             }
         }

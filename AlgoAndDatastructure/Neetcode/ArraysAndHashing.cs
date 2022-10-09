@@ -8,25 +8,28 @@ namespace AlgoAndDatastructure.Neetcode
 {
     internal class ArraysAndHashing
     {
-        public static bool ContainsDuplicate(int[] nums)
+        public static bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t)
         {
-
-            int numslength = nums.Length;
-
-            if (nums == null || numslength == 0)
+            if (nums.Length == 0 || nums == null)
             {
                 return false;
             }
 
-            HashSet<int> numsCount = new HashSet<int>();
+            int len = nums.Length;
 
-            foreach (int i in nums)
+            for (int i = 0; i < len - 1; i++)
             {
-                if (numsCount.Contains(i))
+                for(int j = i + 1; j < len; j++)
                 {
-                    return true;
+                    int valDiff = nums[j] - nums[i];
+                    int idxDiff = i - j;
+
+                    if(Math.Abs(valDiff) <= t || Math.Abs(idxDiff) <= k)
+                    {
+                        return true;
+                    }
                 }
-                numsCount.Add(i);
+
             }
 
             return false;
@@ -209,5 +212,27 @@ namespace AlgoAndDatastructure.Neetcode
             return result;
         }
 
+        public static bool ConatinsDuplicate(int[] nums)
+        {
+            if(nums.Length == 0)
+            {
+                return true;
+            }
+
+            HashSet<int> numberCount = new HashSet<int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (numberCount.Contains(nums[i]))
+                {
+                    return true;
+                }
+
+                numberCount.Add(nums[i]);
+                
+            }
+
+            return false;
+        }
     }
 }

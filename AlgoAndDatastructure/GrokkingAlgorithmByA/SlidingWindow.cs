@@ -90,5 +90,58 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
 
             return minimumLength == int.MaxValue ? 0 : minimumLength;
         }
+
+        public static int LongestSubStringWithKDistinctCharacters(string str, int k)
+        {
+            if(string.IsNullOrEmpty(str) || str.Length < k)
+            {
+                return 0;
+            }
+
+            int strLength = str.Length;
+            int maxLength = int.MinValue;
+            int windowStart = 0;
+
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+
+
+            for(int windowEnd = 0; windowEnd < strLength; windowEnd++)
+            {
+               
+                if (dict.ContainsKey(str[windowEnd]))
+                {
+                    char currentChar = str[windowEnd];
+                    dict[currentChar] = dict[currentChar] + 1;
+                }
+                else
+                {
+                    dict.Add(str[windowEnd], 1);
+                }
+
+                while (dict.Count > k)
+                {
+                    char key = str[windowStart];
+                    dict.TryGetValue(key, out int value);
+
+                
+                    if (value == 1)
+                    {
+                        dict.Remove(key);
+                    }
+                    else
+                    {
+                        dict[key] = dict[key] - 1;
+                    }
+                                     
+                    windowStart++;
+                    
+                }
+
+                maxLength = Math.Max(maxLength, windowEnd - windowStart + 1);
+
+            }
+
+            return maxLength;
+        }
     }
 }

@@ -63,5 +63,32 @@ namespace AlgoAndDatastructure.GrokkingAlgorithmByA
             return maxSum;
             
         }
+
+        public static int SmallestSubArrayWithAGivenSum(int[] arr, int positiveNumber)
+        {
+            if(arr.Length == 0 || arr == null || positiveNumber <= 0)
+            {
+                return 0;
+            }
+
+            int minimumLength = int.MaxValue;
+            int arrLength = arr.Length;
+            int windowStart = 0;
+            int windowSum = 0;
+
+            for (int windowEnd = 0; windowEnd < arrLength; windowEnd++)
+            {
+                windowSum += arr[windowEnd];
+
+                while(windowSum >= positiveNumber)
+                {
+                    minimumLength = Math.Min(minimumLength, windowEnd - windowStart + 1);
+                    windowSum -= arr[windowStart];
+                    windowStart++;
+                }
+            }
+
+            return minimumLength == int.MaxValue ? 0 : minimumLength;
+        }
     }
 }

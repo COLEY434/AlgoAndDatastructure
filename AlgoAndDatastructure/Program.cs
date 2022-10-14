@@ -14,7 +14,7 @@ namespace AlgoAndDatastructure
         static void Main(string[] args)
         {
             //Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.TopKFrequent(new int[] { 1 }, 1)));
-            Console.WriteLine(SlidingWindow.MaximumSubArrayOfSizeKSlidingWindow(new int[]{ 2, 1, 5, 1, 3, 2 }, 3));
+            Console.WriteLine(SlidingWindow.SmallestSubArrayWithAGivenSum(new int[]{ 2, 1, 5, 2, 3, 2 }, 7));
 
             Console.ReadLine();
         }

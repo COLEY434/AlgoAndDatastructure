@@ -13,9 +13,9 @@ namespace AlgoAndDatastructure
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.TopKFrequent(new int[] { 1 }, 1)));
+            Console.WriteLine(JsonSerializer.Serialize(ArraysAndHashing.IsAnagram("anagram", "nagaram")));
              //Console.WriteLine(SlidingWindow.SmallestSubArrayWithAGivenSum(new int[]{ 2, 1, 5, 2, 3, 2 }, 7));
-            Console.WriteLine(SlidingWindow.LongestSubStringWithKDistinctCharacters("cbbebi", 3));
+            //Console.WriteLine(SlidingWindow.LongestSubStringWithKDistinctCharacters("cbbebi", 3));
             Console.ReadLine();
         }
 

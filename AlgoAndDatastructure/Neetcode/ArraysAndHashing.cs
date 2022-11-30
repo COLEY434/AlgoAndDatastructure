@@ -35,7 +35,7 @@ namespace AlgoAndDatastructure.Neetcode
             return false;
         }
 
-        public static bool IsAnagram(string s, string t)
+        public static bool IsAnagram1(string s, string t)
         {
             if(s.Length != t.Length)
             {
@@ -212,27 +212,78 @@ namespace AlgoAndDatastructure.Neetcode
             return result;
         }
 
-        public static bool ConatinsDuplicate(int[] nums)
+        public bool ContainsDuplicate(int[] nums)
         {
-            if(nums.Length == 0)
-            {
-                return true;
-            }
+            HashSet<int> numbers = new HashSet<int>();
 
-            HashSet<int> numberCount = new HashSet<int>();
-
-            for (int i = 0; i < nums.Length; i++)
+            foreach(int i in nums)
             {
-                if (numberCount.Contains(nums[i]))
+                if (numbers.Contains(i))
                 {
                     return true;
                 }
 
-                numberCount.Add(nums[i]);
-                
+                numbers.Add(i);
             }
 
             return false;
+        }
+
+        //https://leetcode.com/problems/valid-anagram/
+        public static bool IsAnagram(string s, string t)
+        {
+            bool isAnagram = false;
+            int sLength = s.Length;
+            int tLength = t.Length;
+
+            if(sLength == 0 || tLength == 0 || tLength != sLength)
+            {
+                return isAnagram;
+            }
+
+            Dictionary<char, int> sCharArray = new Dictionary<char, int>();
+            Dictionary<char, int> tCharArray = new Dictionary<char, int>();
+
+            foreach (char c in s)
+            {
+                if (sCharArray.ContainsKey(c))
+                {
+                    sCharArray[c] += 1;
+                }
+                else
+                {
+                    sCharArray.Add(c, 1);
+                }
+            }
+
+            foreach (char c in t)
+            {
+                if (tCharArray.ContainsKey(c))
+                {
+                    tCharArray[c] += 1;
+                }
+                else
+                {
+                    tCharArray.Add(c, 1);
+                }
+            }
+
+            foreach(var c in sCharArray)
+            {
+                if (!tCharArray.ContainsKey(c.Key))
+                {
+                    return isAnagram;
+                }
+
+                if (sCharArray[c.Key] != tCharArray[c.Key])
+                {
+                    return isAnagram;
+                }
+            }
+
+            isAnagram = true;
+
+            return isAnagram;
         }
     }
 }
